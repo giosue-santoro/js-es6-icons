@@ -1,4 +1,5 @@
-//ARRAY DI ICONE
+//----------- PRIMA MILESTONE --------------------------------------------------------------------------------------------------------------------
+//Array di icone
 const icons = [
 {
     nome: 'cat',
@@ -99,27 +100,55 @@ const icons = [
 ]
 
 //forEach per visualizzare le icone con proprio nome
-const iconsContainer = document.getElementById('container');
+const iconsContainer = $('#container');
 
 
+
+// icons.forEach((element) => {
+
+//     const elementHtml = `
+//     <div>
+//         <i class="${element.famiglia} ${element.prefisso}${element.nome}"></i>
+//         <div>${element.nome}</div>
+//     </div>
+//     `;
+//     iconsContainer.append(elementHtml);
+
+// });
+
+
+
+//----------- SECONDA MILESTONE --------------------------------------------------------------------------------------------------------------------
+//Definisco un array di colori e ad ogni tipologia di icone ne assegno uno
+
+const colori = ['blue', 'orange', 'pink'];
 
 icons.forEach((element) => {
 
-    console.log(element.nome);
-    const elementHtml = `
-    <div>
-        <i class="${element.famiglia} ${element.prefisso}${element.nome}"></i>
-        <div>${element.nome}</div>
-    </div>
-    `;
-    iconsContainer.append(elementHtml);
-});
-
-
-
-
-
-
-
-
-
+    if (element.tipo === 'animal') {
+        const elementHtml = `
+        <div>
+            <i class="${element.famiglia} ${element.prefisso}${element.nome}" style="color: ${colori[0]}"></i>
+            <div>${element.nome}</div>
+        </div>
+        `;
+        iconsContainer.append(elementHtml);
+    } else if (element.tipo === 'fruit'){
+        const elementHtml = `
+        <div>
+            <i class="${element.famiglia} ${element.prefisso}${element.nome}" style="color: ${colori[1]}"></i>
+            <div>${element.nome}</div>
+        </div>
+        `;
+        iconsContainer.append(elementHtml);
+    } else {
+        const elementHtml = `
+        <div>
+            <i class="${element.famiglia} ${element.prefisso}${element.nome}" style="color: ${colori[2]}"></i>
+            <div>${element.nome}</div>
+        </div>
+        `;
+        iconsContainer.append(elementHtml);
+    }
+    
+})
