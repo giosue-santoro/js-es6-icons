@@ -102,9 +102,15 @@ const icons = [
 const iconsContainer = document.getElementById('container');
 
 icons.forEach((element) => {
+
     iconsContainer.innerHTML =+ `
-        
+    <div>
+    <i class="${element.famiglia} ${element.prefisso}${element.nome}"></i>
+    <div>${element.nome}</div>
+    </div>
     `
+    console.log(iconsContainer);
+
 });
 
 
