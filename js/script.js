@@ -101,16 +101,18 @@ const icons = [
 //forEach per visualizzare le icone con proprio nome
 const iconsContainer = document.getElementById('container');
 
+
+
 icons.forEach((element) => {
 
-    iconsContainer.innerHTML =+ `
+    console.log(element.nome);
+    const elementHtml = `
     <div>
-    <i class="${element.famiglia} ${element.prefisso}${element.nome}"></i>
-    <div>${element.nome}</div>
+        <i class="${element.famiglia} ${element.prefisso}${element.nome}"></i>
+        <div>${element.nome}</div>
     </div>
-    `
-    console.log(iconsContainer);
-
+    `;
+    iconsContainer.append(elementHtml);
 });
 
 
